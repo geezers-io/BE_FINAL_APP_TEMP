@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --sub: '#64748B',
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -19,6 +23,10 @@ html, body {
   background-color: #FAFAFA;
 }
 
+.header-p {
+  @apply py-[12px] px-[24px];
+}
+
 
 .flex-items-center {
   @apply flex items-center;
@@ -30,4 +38,27 @@ html, body {
 
 .user-layout {
   height: calc(100vh - 65px);
+}
+
+.quill {
+  height: 100%;
+}
+
+.ql-toolbar {
+  display: none;
+}
+
+.ql-container {
+  border: 0 !important;
+  height: 100%;
+}
+
+.absolute-center {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input::placeholder {
+  color: var(--sub);
 }
