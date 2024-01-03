@@ -1,15 +1,16 @@
 'use client';
 
-import React, { useState, useRef, ChangeEvent } from 'react';
-import Quill from 'react-quill';
+import React, { useState, useRef, ChangeEvent, useMemo } from 'react';
 
 import 'react-quill/dist/quill.snow.css';
 import Button from '@/components/common/atom/Button';
 import Input from '@/components/common/atom/Input';
 import Camera from '@public/svg/camera.svg';
 import { useDialog } from '@/app/context/GlobalDialogContext';
+import dynamic from 'next/dynamic';
 
 const TextEditor = () => {
+  const ReactQuill = useMemo(() => dynamic(() => import('react-quill'), { ssr: false }), []);
   const [content, setContent] = useState('');
   const fileUploader = useRef<HTMLInputElement>(null);
   const { createDialog } = useDialog();
@@ -41,7 +42,7 @@ const TextEditor = () => {
         />
         <Button onClick={onClickSubmit}>작성 완료</Button>
       </header>
-      <Quill
+      <ReactQuill
         theme="snow"
         value={content}
         onChange={setContent}
