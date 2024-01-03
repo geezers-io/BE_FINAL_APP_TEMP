@@ -1,7 +1,7 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 
 const client = axios.create({
-  baseURL: 'http://localhost:8082/v1',
+  baseURL: 'http://49.50.162.9:8082/v1',
   // baseURL: '/',
   timeout: 5000,
   withCredentials: true,
@@ -30,7 +30,7 @@ client.interceptors.response.use(unwrapResponse);
 
 type URLParams = Record<string, string>;
 class ServerApiClient {
-  private readonly url = 'http://localhost:8082';
+  private readonly url = 'http://49.50.162.9:8082';
   private readonly headers = {
     'Content-Type': 'application/json',
   };
