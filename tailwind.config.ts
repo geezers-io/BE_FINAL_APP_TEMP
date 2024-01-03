@@ -13,6 +13,12 @@ const config: Config = {
       colors: theme.colors,
       boxShadow: theme.boxShadow,
       fontSize: theme.fontSize,
+      height: {
+        content: 'calc(100% - 65px)',
+      },
+      backdropBlur: {
+        dialog: 'blur(1px)',
+      },
     },
   },
   plugins: [],
