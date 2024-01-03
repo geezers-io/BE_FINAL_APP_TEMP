@@ -29,12 +29,7 @@ const TextEditor = () => {
     attachMockImage();
   };
 
-  const onClickSubmit = () => {
-    createDialog({
-      title: '태그 추가',
-      children: <div>hello</div>,
-    });
-  };
+  const onClickSubmit = () => {};
 
   return (
     <div>
